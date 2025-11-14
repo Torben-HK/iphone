@@ -74,9 +74,16 @@ export const sizes = [
 ];
 
 export const footerLinks = [
-  "Privacy Policy",
-  "Terms of Use",
-  "Sales Policy",
-  "Legal",
-  "Site Map",
+  {
+    label: "Impressum",
+    path: "/impressum",
+  },
+  {
+    label: "Datenschutz",
+    path: "/datenschutz",
+  },
+  {
+    label: "Barrierefreiheit",
+    path: "/barrierefreiheit",
+  },
 ];

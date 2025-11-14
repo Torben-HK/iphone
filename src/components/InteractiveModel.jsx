@@ -8,7 +8,7 @@ import { sizes } from "../constants";
 
 const DEFAULT_TITLE = "iPhone 15 Pro in Natural Titanium";
 
-const Model = () => {
+const InteractiveModel = () => {
   const sizeKeys = useMemo(() => sizes.map((size) => size.value), []);
   const defaultSize = sizeKeys[0] || "mini";
 
@@ -193,4 +193,4 @@ const Model = () => {
   );
 };
 
-export default Model;
+export default InteractiveModel;

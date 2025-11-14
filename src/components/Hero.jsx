@@ -52,7 +52,7 @@ const Hero = () => {
         id="cta"
         className="flex flex-col items-center opacity-0 translate-y-20 pt-[50px]"
       >
-        <a href="#highlights" className="btn">Jetzt Strategiesession anfragen</a>
+        <a href="#contact" className="btn">Jetzt Strategiesession anfragen</a>
         <p className="font-normal text-xl">From $199/month or $999</p>
       </div>
     </section>

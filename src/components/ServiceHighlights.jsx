@@ -1,12 +1,12 @@
 import { useGSAP } from '@gsap/react'
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { animateWithGsap } from '../utils/animations';
-import { explore1Img, explore2Img, exploreVideo, 
+import { 
   highlightFirstVideo, highlightSecondVideo, 
-  highlightThirdVideo, highlightFourthVideo } from '../utils';
+  highlightThirdVideo } from '../utils';
 import gsap from 'gsap';
 
-const Features = () => {
+const ServiceHighlights = () => {
   const videoRef = useRef();
 
   useGSAP(() => {
@@ -51,12 +51,20 @@ const Features = () => {
 
             <div className="flex flex-col w-full relative">
               <div className="feature-video-container">
-                <div className="overflow-hidden flex-1 h-[50vh]">
-                  <img src={explore1Img} alt="titanium" className="feature-video g_grow" />
-                </div>
-                <div className="overflow-hidden flex-1 h-[50vh]">
-                  <img src={explore2Img} alt="titanium 2" className="feature-video g_grow" />
-                </div>
+                {[highlightFirstVideo, highlightThirdVideo].map((videoSrc, index) => (
+                  <div key={videoSrc} className="overflow-hidden flex-1 h-[50vh]">
+                    <video
+                      className="feature-video g_grow"
+                      playsInline
+                      loop
+                      muted
+                      autoPlay
+                      preload="metadata"
+                    >
+                      <source src={videoSrc} type="video/mp4" />
+                    </video>
+                  </div>
+                ))}
               </div>
 
               <div className="feature-text-container">
@@ -81,7 +89,7 @@ const Features = () => {
                 </div>
               </div>
               <div className="flex-center mt-16">
-                <a href="#highlights" className="btn">Jetzt Strategiesession anfragen</a>
+                <a href="#contact" className="btn">Jetzt Strategiesession anfragen</a>
               </div>
             </div>
           </div>
@@ -91,4 +99,4 @@ const Features = () => {
   )
 }
 
-export default Features
+export default ServiceHighlights
